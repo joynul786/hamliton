@@ -1,0 +1,62 @@
+.iot-header-images {
+  .image-1 {
+    position: relative;
+    height: 200px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    img {
+      position: absolute;
+      bottom: 0;
+      width: auto;
+      height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+  .image-2 {
+    position: relative;
+    height: 200px;
+    margin-top: 50px;
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: auto;
+      height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+  .image-3 {
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    img {
+      position: absolute;
+      bottom: 0;
+      left: -60px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom;
+      @media screen and (max-width: 899px) {
+        left: 0;
+      }
+    }
+  }
+  .image-4 {
+    position: relative;
+    height: 200px;
+    img {
+      position: absolute;
+      bottom: 0;
+      left: -30px;
+      width: auto;
+      height: 250px;
+      object-fit: contain;
+      object-position: bottom;
+    }
+  }
+}

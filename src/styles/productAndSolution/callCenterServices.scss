@@ -1,0 +1,34 @@
+@import "../variables";
+
+.call-center-service-steps {
+  margin: 0 -20px;
+  li {
+    padding: 20px;
+    > div {
+      width: 100%;
+    }
+    &:not(:last-child) {
+      position: relative;
+      &::before {
+        content: "";
+        width: calc(100% - 50px);
+        height: 1px;
+        background-color: #c2c2c2;
+        display: block;
+        position: absolute;
+        left: 60px;
+        top: 35px;
+      }
+    }
+
+    .service-step-content p {
+      max-width: 180px;
+    }
+  }
+  @media screen and (max-width: 899px) {
+    flex-wrap: wrap;
+    li {
+      width: 50%;
+    }
+  }
+}

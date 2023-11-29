@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Quakiez";
+  src: local("Quakiez"),
+    url(../assets/fonts/quakiez/quakiez.display.ttf) format("truetype");
+}
+
+html {
+  font-family: $primaryFont;
+}
+body {
+  margin: 0;
+  font-family: $primaryFont;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  color: $textColor;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:focus {
+  outline: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  font-family: $primaryFont;
+  &:hover {
+    color: inherit;
+  }
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+// FONTS
+.ff-primary {
+  font-family: $primaryFont !important;
+}
+.ff-secondary {
+  font-family: $quakiezFont !important;
+}
+.ff-open-sans {
+  font-family: $openSansFont !important;
+}
+
+/* COLORS */
+.fc-primary {
+  color: $primary !important;
+}
+.fc-secondary {
+  color: $secondary !important;
+}
+.fc-blue {
+  color: $blue !important;
+}
+.fc-white {
+  color: #fff !important;
+}
+
+/* BACKGROUND COLORS*/
+.bg-primary {
+  background-color: $primary !important;
+}
+.bg-secondary {
+  background-color: $secondary !important;
+}
+.bg-dark-main {
+  background-color: $darkMain !important;
+}
+.bg-dark-secondary {
+  background-color: $darkSecondary !important;
+}
+
+/* FILLS */
+.fill-primary {
+  fill: $primary;
+}
+.fill-secondary {
+  fill: $secondary;
+}
+
+/* STROKES */
+.stroke-primary {
+  stroke: $primary;
+}
+.stroke-secondary {
+  stroke: $secondary;
+}
+
+// SHADOWS
+.shadow {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+}
+.shadow-2 {
+  box-shadow: -2px 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+// commons
+.testimonial-swiper {
+  .swiper-slide {
+    &:nth-child(1n) .testimonial-image {
+      background-color: $secondary;
+    }
+    &:nth-child(2n) .testimonial-image {
+      background-color: $primary;
+    }
+    &:nth-child(3n) .testimonial-image {
+      background-color: #d9d9d9;
+    }
+  }
+  &.centered-slides {
+    .swiper-slide-active > div > div {
+      box-shadow: -7px 12px 13px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@import "../variables";
+
+header.site-header {
+  background-color: #fff !important;
+  box-shadow: none !important;
+  img.logo-image {
+    width: 180px;
+  }
+}
+.nav-item {
+  padding: 0 !important;
+  background-color: transparent !important;
+  position: unset !important;
+  font-family: inherit !important;
+  .nav-link {
+    padding: 6px 16px;
+    color: inherit;
+    position: relative;
+    color: $mainGray;
+    font-family: inherit !important;
+
+    &::after {
+      content: "";
+      height: 2px;
+      width: 0;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $secondary;
+      transition: all 0.4s;
+    }
+
+    &.active {
+      color: $primary;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  &:hover {
+    .nav-link {
+      color: $primary;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  > .submenu {
+    width: 100%;
+    font-family: $primaryFont;
+    background-color: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transform: translateY(100%);
+    transition: all 0.4s;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 500px;
+    overflow-y: auto;
+
+    .submenu-link {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-top: 16px;
+      svg {
+        margin-left: 4px;
+      }
+    }
+  }
+  &:hover {
+    & > .submenu {
+      transform: translateY(0);
+      z-index: 9999;
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.mobile-submenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: $primaryFont;
+  background-color: #fff;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+.mobile-services-nav {
+  .swiper-slide {
+    width: fit-content;
+  }
+  a {
+    white-space: pre;
+    display: block;
+    width: fit-content;
+    color: $mainGray;
+    font-weight: 400;
+    &:hover {
+      color: $mainGray;
+    }
+
+    &.active > button {
+      background-color: $primary;
+      border-color: $primary;
+      color: #fff;
+    }
+  }
+}

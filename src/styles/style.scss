@@ -1,0 +1,136 @@
+@import "variables", "common";
+
+.section-heading-title {
+  span {
+    font-family: $primaryFont;
+  }
+}
+
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  content: "";
+}
+
+// Swiper pagination
+.swiper {
+  padding-bottom: 40px;
+  .swiper-pagination {
+    bottom: 0;
+    .swiper-pagination-bullet {
+      width: 40px;
+      height: 14px;
+      border-radius: 20px;
+      background-color: $secondary;
+      opacity: 1;
+      opacity: 1;
+      transition: all 0.4s;
+      &.swiper-pagination-bullet-active {
+        width: 80px;
+      }
+    }
+  }
+}
+
+.vertical-swiper-with-pagination .swiper {
+  padding-bottom: 30px;
+  .swiper-pagination-bullet {
+    border-radius: 20px;
+    background-color: $secondary;
+    opacity: 1;
+    transition: all 0.4s;
+  }
+  @media only screen and (min-width: 900px) {
+    position: unset;
+    height: 850px;
+    .swiper-pagination {
+      right: unset;
+      left: 0;
+      top: 50px;
+      transform: none;
+      .swiper-pagination-bullet {
+        width: 14px !important;
+        height: 40px !important;
+        &.swiper-pagination-bullet-active {
+          height: 80px !important;
+        }
+      }
+    }
+  }
+}
+
+// Swiper Navigation
+.swiper {
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+    top: unset;
+    left: unset;
+    bottom: 70px;
+    right: 100px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 50%;
+    font-size: 14px;
+    margin-top: 0;
+    color: inherit;
+    fill: inherit;
+
+    &::after {
+      width: 20px;
+      height: 20px;
+      color: inherit;
+      font-size: inherit;
+      font-family: inherit;
+    }
+  }
+  .swiper-button-next {
+    &::after {
+      content: url(../assets/img/static/icon/forward-white.svg);
+    }
+  }
+  .swiper-button-prev {
+    right: 160px;
+    &::after {
+      content: url(../assets/img/static/icon/back-white.svg);
+    }
+  }
+  &.left-navigation .swiper-button-prev {
+    right: unset;
+    left: 80px;
+  }
+  &.left-navigation .swiper-button-next {
+    right: unset;
+    left: 140px;
+  }
+
+  @media screen and (min-width: 900px) {
+    &.center-navigation .swiper-button-prev {
+      right: unset;
+      left: 45%;
+      transform: translateX(-50%);
+    }
+    &.center-navigation .swiper-button-next {
+      right: unset;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &.navigation-black {
+    .swiper-button-next {
+      &::after {
+        content: url(../assets/img/static/icon/forward.svg);
+      }
+    }
+    .swiper-button-prev {
+      &::after {
+        content: url(../assets/img/static/icon/back.svg);
+      }
+    }
+  }
+}

@@ -1,42 +1,105 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
-import StandardButton from "component/buttons/standardButton";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import HeaderImage from "assets/img/static/bg/home-header.png";
-import { RouteConstant } from "navigation/constant";
-
+import { Navigation,  } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import homeBannerPic from "assets/img/static/bg/home_banner.png";
 const HomeHeader = () => {
   return (
     <section>
       <Container maxWidth="xl">
-        <Box py={5} color="black.main">
-          <Grid
-            container
-            justifyContent={{ xs: "center", md: "flex-end" }}
-            alignItems="center"
-          >
-            <Grid item xs={12} md={5}>
-              <Box>
-                <Typography variant="h4">
-                  Innovate mobile services for businesses, MNOs, MVNOs, and IoT.
-                </Typography>
-                <Typography variant="body1" my={2}>
-                  Our MVNO, MVNE, MVNA, IoT, and Value Added Services Solutions
-                  empowers people, businesses, and devices to deliver unique
-                  Mobile and Connectivity experiences.
-                </Typography>
-                <StandardButton
-                  link={RouteConstant?.CONTACT}
-                  color="primary"
-                  buttonText="Talk With Us"
-                />
-              </Box>
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <Box>
-                <img src={HeaderImage} alt="Innovative Mobile Services" />
-              </Box>
-            </Grid>
-          </Grid>
+        <Box py={3} color="black.main">
+          <div className="home-banner-container">
+            <Swiper
+              spaceBetween={0}
+              slidesPerView={1}
+              modules={[Navigation]}
+              navigation
+              style={{ paddingBottom: 0 }}
+              className="home-swiper"
+            >
+              <SwiperSlide>
+                <div className="home-banner">
+                  <div className="banner-pic">
+                    <img src={homeBannerPic} alt="home-banner" />
+                  </div>
+                  <div className="overlay"></div>
+                  <div className="banner-heading">
+                    <h5>welcome to hamilton</h5>
+                    <h2>
+                      {" "}
+                      Mobile Virtual Network Enabler fueling the future of
+                      communication
+                    </h2>
+                    <div className="banner-action-btn">
+                      <Button
+                        sx={{
+                          borderRadius: 10,
+                        }}
+                        color="secondary"
+                        variant="contained"
+                      >
+                        Schedule A Call
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="home-banner">
+                  <div className="banner-pic">
+                    <img src={homeBannerPic} alt="home-banner" />
+                  </div>
+                  <div className="overlay"></div>
+                  <div className="banner-heading">
+                    <h5>welcome to hamilton</h5>
+                    <h2>
+                      {" "}
+                      Mobile Virtual Network Enabler fueling the future of
+                      communication
+                    </h2>
+                    <div className="banner-action-btn">
+                      <Button
+                        sx={{
+                          borderRadius: 10,
+                        }}
+                        color="secondary"
+                        variant="contained"
+                      >
+                        Schedule A Call
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="home-banner">
+                  <div className="banner-pic">
+                    <img src={homeBannerPic} alt="home-banner" />
+                  </div>
+                  <div className="overlay"></div>
+                  <div className="banner-heading">
+                    <h5>welcome to hamilton</h5>
+                    <h2>
+                      {" "}
+                      Mobile Virtual Network Enabler fueling the future of
+                      communication
+                    </h2>
+                    <div className="banner-action-btn">
+                      <Button
+                        sx={{
+                          borderRadius: 10,
+                        }}
+                        color="secondary"
+                        variant="contained"
+                      >
+                        Schedule A Call
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </Box>
       </Container>
     </section>

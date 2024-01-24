@@ -57,10 +57,16 @@ const GetUpdate = () => {
           <Grid container spacing={5}>
             <Grid item xs={12} md={6}>
               <Box pt={5}>
-                <SectionHeading
-                  subtitle="Get Updates about"
-                  title="Hamilton Telecom"
-                />
+                <Typography
+                  variant="subtitle2"
+                  letterSpacing={1}
+                  textTransform="uppercase"
+                  color="black.main"
+                  fontWeight={500}
+                >
+                  Get Updates about
+                </Typography>
+                <Typography variant="h3" fontWeight={700} color="#000">Hamilton Telecom</Typography>
                 <Typography variant="body2" mt={2}>
                   Subscribe to our new’s letter and get weekly and monthly
                   updates about discounts, offers, new services, upcoming events

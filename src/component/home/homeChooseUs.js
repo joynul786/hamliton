@@ -1,176 +1,71 @@
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
-import SectionHeading from "component/sectionHeading";
+import { Box,  Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import ReliabilityImage from "assets/img/static/bg/reliability.png";
-import TeamImage from "assets/img/static/bg/team.png";
-import TestedProcessImage from "assets/img/static/bg/tested-process.png";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import HelpForm from "parts/helpForm";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import { Link } from "react-router-dom";
+import ChooseCard from "component/cards/chooseCard";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const HomeChooseUs = () => {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
   return (
     <section>
       <Container maxWidth="xl">
-        <Box mt={{ xs: 5, md: 0, lg: -10 }}>
-          <SectionHeading
-            subtitle="What makes you"
-            title="Choose Us"
-            subtitleEndIcon
-          />
-        </Box>
-        <Box py={5}>
-          <Grid container spacing={3}>
-            {/* Very High Reliability */}
-            <Grid item xs={12} sm={6} lg={4.5}>
-              <Box
-                p={2}
-                sx={{
-                  backgroundColor: ({ palette }) => palette?.primary?.main,
-                  borderRadius: "20px",
-                }}
-                className="shadow"
-                color="white.main"
-              >
-                <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
-                  <img src={ReliabilityImage} alt="Very High Reliability" />
-                </Box>
-                <Box pt={3} pb={2} px={3}>
-                  <Typography variant="h5">Very High Reliability</Typography>
-                  <Typography variant="body2" fontWeight={400} mt={1.5}>
-                    High reliability of carrier-grade equipment provides full
-                    redundancy, guaranteeing 99.999% uptime.
-                  </Typography>
-                  <Box display="flex" justifyContent="flex-end">
-                    <Button
-                      variant="outlined"
-                      color="inherit"
-                      sx={{
-                        width: 40,
-                        height: 40,
-                        borderRadius: "50%",
-                        minWidth: "unset",
-                      }}
-                    >
-                      <ArrowForwardIcon fontSize="medium" />
-                    </Button>
-                  </Box>
-                </Box>
-              </Box>
+        <Box py={4}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              borderBottom: "1px solid rgba(0,0,0, .2)",
+              width: "80%",
+              mx: "auto",
+            }}
+          >
+            <Typography variant="overline">Why choose us</Typography>
+            <Box component="span" fontSize="14px">
+              <Link to={"#"}>Learn more about us</Link>
+              &nbsp; &nbsp;
+              <ArrowOutwardIcon fontSize="18px" />
+            </Box>
+          </Box>
+          <Grid container spacing={3} py={3}>
+            {matches && <Grid item xs={12} md={2.5}></Grid>}
+            <Grid item xs={12} sm={4} md={2.5}>
+              <ChooseCard
+                theme="primary"
+                bgPic="1"
+                title="Business readiness"
+                desc="We have invested greatly to build a platform our customers can leverage on to launch their own mobile services and efficiently onboard subscribers with no capital investment."
+              />
             </Grid>
-
-            {/* Experienced Team ----- Battle-tested Process */}
-            <Grid item xs={12} sm={6} lg={3.5}>
-              <Box mt={{ xs: 3, sm: 0 }}>
-                <Grid container spacing={3}>
-                  {/* Experienced Team */}
-                  <Grid item xs={12} sm={12}>
-                    <Box
-                      p={2}
-                      sx={{
-                        backgroundColor: ({ palette }) =>
-                          palette?.secondary?.main,
-                        borderRadius: "20px",
-                      }}
-                      className="shadow"
-                      color="black.main"
-                    >
-                      <Grid container spacing={1}>
-                        <Grid item xs={6} md={7}>
-                          <Box mt={-6}>
-                            <img src={TeamImage} alt="Experienced Team" />
-                          </Box>
-                        </Grid>
-                        <Grid item xs={6} md={5}>
-                          <Typography variant="h6" mb={1}>
-                            Experienced Team
-                          </Typography>
-                          <Button
-                            variant="outlined"
-                            color="inherit"
-                            sx={{
-                              width: 40,
-                              height: 40,
-                              borderRadius: "50%",
-                              minWidth: "unset",
-                            }}
-                          >
-                            <ArrowForwardIcon fontSize="medium" />
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </Box>
-                  </Grid>
-
-                  {/* Battle-tested Process */}
-                  <Grid item xs={12} sm={12}>
-                    <Box
-                      p={2}
-                      sx={{
-                        backgroundColor: ({ palette }) => palette?.black.main,
-                        borderRadius: "20px",
-                      }}
-                      className="shadow"
-                      color="white.main"
-                    >
-                      <Grid container spacing={1}>
-                        <Grid item xs={6}>
-                          <Typography variant="h6" mb={1}>
-                            Battle-tested Process
-                          </Typography>
-                          <Button
-                            variant="outlined"
-                            color="inherit"
-                            sx={{
-                              width: 40,
-                              height: 40,
-                              borderRadius: "50%",
-                              minWidth: "unset",
-                            }}
-                          >
-                            <ArrowForwardIcon fontSize="medium" />
-                          </Button>
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Box mb={-6}>
-                            <img
-                              src={TestedProcessImage}
-                              alt="Battle-tested Process"
-                            />
-                          </Box>
-                        </Grid>
-                      </Grid>
-                    </Box>
-                  </Grid>
-                </Grid>
-              </Box>
+            <Grid item xs={12} sm={4} md={2.5}>
+              <ChooseCard
+                theme="secondary"
+                bgPic="2"
+                title={
+                  <>
+                    Innovative and <br />
+                    passionate
+                  </>
+                }
+                desc="We always come up with customized solutions to enrich your revenue to greater heights."
+              />
             </Grid>
-
-            {/* Find out how we can help you */}
-            <Grid item xs={12} sm={12} lg={4}>
-              <Box
-                sx={{
-                  background: `linear-gradient(110deg, #EDEDED 2.32%, #F8FFFE 80%)`,
-                  borderRadius: "20px",
-                }}
-                p={2}
-                mt={{ xs: 3, lg: 0 }}
-                className="shadow"
-              >
-                <Typography
-                  variant="h4"
-                  fontSize={{ xs: 30, md: 48 }}
-                  fontWeight={700}
-                  lineHeight={1}
-                  maxWidth={"80%"}
-                  color="primary.main"
-                >
-                  Find out how we can help you
-                </Typography>
-                <Box pt={3}>
-                  <HelpForm />
-                </Box>
-              </Box>
+            <Grid item xs={12} sm={4} md={2.5}>
+              <ChooseCard
+                theme="primary"
+                bgPic="3"
+                title={
+                  <>
+                    Experienced <br />
+                    team
+                  </>
+                }
+                desc="We have a supreme team who works rigorously to grow businesses beyond client’s expectations."
+              />
             </Grid>
+            {matches && <Grid item xs={12} md={2.5}></Grid>}
           </Grid>
         </Box>
       </Container>

@@ -1,14 +1,11 @@
 import HomeAbout from "component/home/homeAbout";
 import HomeChooseUs from "component/home/homeChooseUs";
 import HomeHeader from "component/home/homeHeader";
-import HomeServices from "component/home/homeServices";
 import Navbar from "parts/navbar";
 import React from "react";
-
-import HomeCoverage from "component/home/homeCoverage";
-import HomeTestimonial from "component/home/homeTestimonial";
-import GetUpdate from "parts/getUpdate";
+import ContactUs from "parts/contactUs";
 import Footer from "parts/footer";
+import ProductSlider from "component/home/productsSlider";
 
 import "../../styles/home/index.scss";
 
@@ -19,11 +16,10 @@ const Home = () => {
       <main>
         <HomeHeader />
         <HomeAbout />
+        <ProductSlider/>
+
         <HomeChooseUs />
-        <HomeServices />
-        <HomeCoverage />
-        <HomeTestimonial />
-        <GetUpdate />
+        <ContactUs/>
       </main>
       <Footer />
     </>

@@ -25,48 +25,27 @@ import { Close } from "@mui/icons-material";
 
 const navbarList = [
   {
-    label: "Product & Solution",
-    path: RouteConstant?.PRODUCT_AND_SOLUTION,
-    selfLink: false,
-    Submenu: ProductSolutionNavMenu,
+    label: "About Hamilton",
+    path: RouteConstant.ABOUT,
   },
   {
-    label: "Industries",
-    path: RouteConstant?.INDUSTRIES,
-    selfLink: false,
-    Submenu: IndustriesNavMenu,
+    label: "Products & Services",
+    path: RouteConstant.PRODUCT_SERVICE,
   },
   {
-    label: "Customer Stories",
-    path: RouteConstant?.CUSTOMER_STORIES,
-    selfLink: true,
+    label: "Delivered Experiences",
+    path: RouteConstant.DELIVERED_EXPERIENCE,
   },
-  { label: "Resources", path: RouteConstant?.RESOURCES, selfLink: true },
-  { label: "About", path: RouteConstant?.ABOUT, selfLink: true },
+  { label: "Industries", path: RouteConstant.INDUSTRIES },
+  { label: "Contact Us", path: RouteConstant.CONTACT },
 ];
 
 const Navbar = () => {
-  const { pathname } = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
-
-  const [targetMobileSubmenu, setTargetMobileSubmenu] = useState(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
-
-  const handleCloseTargetMobileSubmenu = () => {
-    setTargetMobileSubmenu(null);
-    setMobileOpen(false);
-  };
-
-  const isSubMenuActive = useCallback(
-    (path) => {
-      if (pathname.includes(path)) return "active";
-      else return "";
-    },
-    [pathname]
-  );
 
   return (
     <AppBar position="static" className="site-header">
@@ -85,48 +64,23 @@ const Navbar = () => {
           <Box
             sx={{
               height: "auto",
-              flexGrow: 1,
+              // flexGrow: 1,
+              ml: "auto",
               display: { xs: "none", lg: "flex" },
             }}
           >
-            {navbarList.map(({ label, path, selfLink, Submenu }, i) => (
+            {navbarList.map(({ label, path }, i) => (
               <MenuItem key={i} className="nav-item">
-                {selfLink ? (
-                  <NavLink
-                    to={path}
-                    className={({ isActive }) =>
-                      `nav-link ${isActive ? `active` : ""} ${
-                        Submenu ? isSubMenuActive(path) : ""
-                      }`
-                    }
-                  >
-                    {label}
-                  </NavLink>
-                ) : (
-                  <Box
-                    component="span"
-                    className={`nav-link ${
-                      Submenu ? isSubMenuActive(path) : ""
-                    }`}
-                  >
-                    {label}
-                  </Box>
-                )}
-                {Submenu ? (
-                  <Box className="submenu shadow">{<Submenu />}</Box>
-                ) : (
-                  <></>
-                )}
+                <NavLink
+                  to={path}
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? `active` : ""} `
+                  }
+                >
+                  {label}
+                </NavLink>
               </MenuItem>
             ))}
-
-            <Box marginLeft="auto" marginTop="auto" marginBottom="auto">
-              <StandardButton
-                link={RouteConstant?.CONTACT}
-                buttonText="Contact Us"
-                endIcon={<ArrowOutwardIcon />}
-              />
-            </Box>
           </Box>
 
           {/* Mobile */}
@@ -160,77 +114,19 @@ const Navbar = () => {
                 },
               }}
             >
-              {navbarList.map(({ label, path, selfLink, Submenu }, i) => (
+              {navbarList.map(({ label, path }, i) => (
                 <MenuItem key={i} className="nav-item">
-                  {selfLink ? (
-                    <NavLink
-                      to={path}
-                      className={({ isActive }) =>
-                        isActive ? `nav-link active` : "nav-link"
-                      }
-                      onClick={handleDrawerToggle}
-                    >
-                      {label}
-                    </NavLink>
-                  ) : (
-                    <Box
-                      component="span"
-                      className={`nav-link ${
-                        Submenu ? isSubMenuActive(path) : ""
-                      }`}
-                      onClick={() => setTargetMobileSubmenu(path)}
-                    >
-                      {label}
-                    </Box>
-                  )}
-                  {Submenu && path === targetMobileSubmenu ? (
-                    <Box className="mobile-submenu shadow">
-                      <Box
-                        p={3}
-                        sx={{
-                          borderBottom: "1px solid",
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                        }}
-                      >
-                        <Title title={label} fontWeight={500} color="primary" />
-                        <Box>
-                          <Button
-                            color="secondary"
-                            sx={{
-                              width: 30,
-                              height: 30,
-                              borderRadius: "50%",
-                              minWidth: "unset",
-                              padding: 0,
-                            }}
-                            onClick={handleCloseTargetMobileSubmenu}
-                          >
-                            <Close fontSize="medium" />
-                          </Button>
-                        </Box>
-                      </Box>
-                      {
-                        <Submenu
-                          handleCloseTargetMobileSubmenu={
-                            handleCloseTargetMobileSubmenu
-                          }
-                        />
-                      }
-                    </Box>
-                  ) : (
-                    <></>
-                  )}
+                  <NavLink
+                    to={path}
+                    className={({ isActive }) =>
+                      isActive ? `nav-link active` : "nav-link"
+                    }
+                    onClick={handleDrawerToggle}
+                  >
+                    {label}
+                  </NavLink>
                 </MenuItem>
               ))}
-              <MenuItem onClick={handleDrawerToggle} className="nav-item">
-                <StandardButton
-                  buttonText="Contact Us"
-                  endIcon={<ArrowOutwardIcon />}
-                  sx={{ mx: 2 }}
-                />
-              </MenuItem>
             </Drawer>
           </Box>
         </Toolbar>

@@ -125,3 +125,17 @@ img {
     }
   }
 }
+.position-relative {
+  position: relative;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.resImg {
+  overflow: hidden;
+  img {
+    max-width: 100%;
+  }
+}

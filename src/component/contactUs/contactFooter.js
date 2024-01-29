@@ -5,9 +5,10 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 
 const ContactFooter = () => {
   return (
-    <Box my={4}>
+    <Box mb={5}>
+
       <Container maxWidth="xl">
-        <Grid container>
+        <Grid container >
           <Grid item xs={12} md={4}>
             <Box bgcolor="#2A2B2A" p={3} color="#fff">
               <Typography variant="h4" mb={3}>

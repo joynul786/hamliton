@@ -8,14 +8,14 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import SectionHeading from "component/sectionHeading";
 import { GetUpdateModel } from "_models/data/data.get_update.model";
 import { ErrorGetUpdateModel } from "_models/error/error.get_update.model";
 import { ValidateGetUpdate } from "functions/validators";
 import StandardButton from "component/buttons/standardButton";
+
 const inputList = [
-  { tpe: "text", name: "name", label: "Enter your name" },
-  { tpe: "email", name: "email", label: "Enter your email" },
+  { type: "text", name: "name", label: "Enter your name" },
+  { type: "email", name: "email", label: "Enter your email" },
 ];
 
 const GetUpdate = () => {
@@ -35,28 +35,35 @@ const GetUpdate = () => {
     const isValid = ValidateGetUpdate(state);
 
     if (isValid.valid) {
+      // Handle submission
     } else {
-      for (let i = 0, item; !!(item = isValid.errors[i++]); ) {
+      isValid.errors.forEach((item) => {
         setError((prevState) => ({ ...prevState, [item.name]: item.error }));
-      }
+      });
     }
   };
 
   return (
     <section>
       <Box
+        // className='fromCtrl'
+        mx={{ xs: 2, md: 3 }}
         sx={{
           background: `url(${GetUpdateShape})`,
-          backgroundPosition: "bottom right",
+          backgroundPosition: "right",
           backgroundRepeat: "no-repeat",
-          backgroundSize: { xs: "100%", sm: "60%" },
+          height: { xs: '700px', md: '450px' },
+          backgroundSize: 'cover'
+
         }}
-        py={8}
+
       >
         <Container maxWidth="xl">
-          <Grid container spacing={5}>
+          <Grid container spacing={4} justifyContent="center"
+            className="footerForm"
+          >
             <Grid item xs={12} md={6}>
-              <Box pt={5}>
+              <Box py={{ xs: 3, md: 5 }}>
                 <Typography
                   variant="subtitle2"
                   letterSpacing={1}
@@ -66,18 +73,18 @@ const GetUpdate = () => {
                 >
                   Get Updates about
                 </Typography>
-                <Typography variant="h3" fontWeight={700} color="#000">Hamilton Telecom</Typography>
+                <Typography variant="h3" fontWeight={1000} pt={2} color="#000">
+                  Hamilton Telecom
+                </Typography>
                 <Typography variant="body2" mt={2}>
-                  Subscribe to our new’s letter and get weekly and monthly
-                  updates about discounts, offers, new services, upcoming events
-                  and more{" "}
+                  Subscribe to our newsletter and get weekly and monthly updates about discounts, offers, new services, upcoming events, and more.
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} md={6}>
-              <Box bgcolor="white.main" p={5} className="shadow">
-                <Box component="form" onSubmit={handleSubmit}>
-                  {inputList?.map(({ type, label, name }, i) => (
+            <Grid item xs={12} md={6} >
+              <Box bgcolor="white.main" p={{ xs: 3, md: 5 }} className="shadow">
+                <form onSubmit={handleSubmit}>
+                  {inputList.map(({ type, label, name }, i) => (
                     <FormGroup key={i} sx={{ my: 2 }}>
                       <TextField
                         variant="standard"
@@ -86,14 +93,15 @@ const GetUpdate = () => {
                         name={name}
                         label={label}
                         autoComplete="off"
-                        value={state?.[name]}
-                        error={error?.[name] !== ""}
-                        helperText={error?.[name]}
+                        value={state[name]}
+                        error={error[name] !== ""}
+                        helperText={error[name]}
                         onChange={(ev) => handleChange(ev, name)}
                         onFocus={() => handleFocus(name)}
                         sx={{
                           fontWeight: 400,
                         }}
+                        fullWidth
                       />
                     </FormGroup>
                   ))}
@@ -101,7 +109,7 @@ const GetUpdate = () => {
                   <Box pt={3}>
                     <StandardButton type="submit" buttonText="Subscribe" />
                   </Box>
-                </Box>
+                </form>
               </Box>
             </Grid>
           </Grid>

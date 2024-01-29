@@ -8,10 +8,10 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 const Faq = () => {
   return (
     <Box my={4}>
-      <Container maxWidth="xl">
+      <Container>
         <Typography
           variant="h3"
-          color="#000"
+          color="#FAAF01"
           fontWeight="bold"
           textAlign="center"
           mb={3}

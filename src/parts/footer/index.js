@@ -1,6 +1,9 @@
 import {
   Box,
+  CardContent,
   Container,
+  Card,
+  CardMedia,
   Grid,
   List,
   ListItem,
@@ -8,6 +11,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import Images from "assets/img/images";
 
 const topFooterList = [
   {
@@ -75,101 +79,31 @@ const Footer = () => {
   return (
     <footer>
       <Box
+        mx={{ xs: 2, md: 3 }}
         bgcolor="dark.main"
         color="text.grey"
-        py={10}
         className="ff-open-sans"
       >
         <Container maxWidth="xl">
           <Box>
-            <Grid container spacing={10}>
-              {/* {topFooterList?.map(({ label, desc }, i) => (
-                <Grid item key={i} xs={12} sm={6} md={4}>
-                  <Typography variant="body1" fontWeight={600}>
-                    {label}
-                  </Typography>
-                  <Typography variant="body2" fontWeight={400} mt={2}>
-                    {desc}
-                  </Typography>
-                </Grid>
-              ))} */}
-              <Grid item xs={12} sm={12} md={2}>
-                <Typography variant="body2" fontWeight={400}>
-                  &copy; {new Date().getFullYear()}. All rights reserved.
-                  <br /> Terms of Service — Privacy Policy
-                </Typography>
+            <Grid container spacing={10} style={{ display: 'flex', justifyContent: 'space-around' }}>
+
+              <Grid item xs={12} sm={12} md={4}>
+
+                <CardMedia
+                  // style={{ padding: 3 }}
+                  component="img"
+                  alt="Your Image Alt Text"
+                  height="170"
+                  src={Images.footerImg}
+                />
               </Grid>
-              <Grid item xs={12} sm={12} md={10}>
+              <Grid item xs={12} sm={12} md={8}  >
                 <Box>
                   <Grid container spacing={{ xs: 5, sm: 2 }}>
-                    {/* Product Nav List */}
-                    <Grid item xs={6} sm={2.4}>
-                      <Typography variant="body1" fontWeight={600}>
-                        Product
-                      </Typography>
-                      <List sx={{ pt: 2, pb: 0 }}>
-                        {productNavList?.map(({ label, link }, i) => (
-                          <ListItem key={i} sx={{ px: 0 }}>
-                            <Link
-                              to={link}
-                              style={{
-                                color: "inherit",
-                                fontSize: 14,
-                                fontWeight: 400,
-                              }}
-                            >
-                              {label}
-                            </Link>
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Grid>
-                    <Grid item xs={6} sm={2.4}>
-                      <Typography variant="body1" fontWeight={600}>
-                        Other
-                      </Typography>
-                      <List sx={{ pt: 2, pb: 0 }}>
-                        {OtherNavList?.map(({ label, link }, i) => (
-                          <ListItem key={i} sx={{ px: 0 }}>
-                            <Link
-                              to={link}
-                              style={{
-                                color: "inherit",
-                                fontSize: 14,
-                                fontWeight: 400,
-                              }}
-                            >
-                              {label}
-                            </Link>
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Grid>
-                    {/* Scial Nav List */}
-                    <Grid item xs={6} sm={2.4}>
-                      <Typography variant="body1" fontWeight={600}>
-                        Social
-                      </Typography>
-                      <List sx={{ pt: 2, pb: 0 }}>
-                        {socialNavList?.map(({ label, link }, i) => (
-                          <ListItem key={i} sx={{ px: 0 }}>
-                            <Link
-                              to={link}
-                              style={{
-                                color: "inherit",
-                                fontSize: 14,
-                                fontWeight: 400,
-                              }}
-                            >
-                              {label}
-                            </Link>
-                          </ListItem>
-                        ))}
-                      </List>
-                    </Grid>
                     {/* Company Nav List */}
-                    <Grid item xs={6} sm={2.4}>
-                      <Typography variant="body1" fontWeight={600}>
+                    <Grid item xs={6} sm={2.4} >
+                      <Typography variant="h6" color={'#FBC13C'} >
                         Company
                       </Typography>
                       <List sx={{ pt: 2, pb: 0 }}>
@@ -189,9 +123,58 @@ const Footer = () => {
                         ))}
                       </List>
                     </Grid>
+                    {/* Product Nav List */}
+                    <Grid item xs={6} sm={2.4}>
+                      <Typography variant="h6" color={'#FBC13C'} >
+
+                        Product
+                      </Typography>
+                      <List sx={{ pt: 2, pb: 0 }}>
+                        {productNavList?.map(({ label, link }, i) => (
+                          <ListItem key={i} sx={{ px: 0 }}>
+                            <Link
+                              to={link}
+                              style={{
+                                color: "inherit",
+                                fontSize: 14,
+                                fontWeight: 400,
+                              }}
+                            >
+                              {label}
+                            </Link>
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Grid>
+
+                    {/* Scial Nav List */}
+                    <Grid item xs={6} sm={2.4}>
+                      <Typography variant="h6" color={'#FBC13C'} >
+
+                        Social
+                      </Typography>
+                      <List sx={{ pt: 2, pb: 0 }}>
+                        {socialNavList?.map(({ label, link }, i) => (
+                          <ListItem key={i} sx={{ px: 0 }}>
+                            <Link
+                              to={link}
+                              style={{
+                                color: "inherit",
+                                fontSize: 14,
+                                fontWeight: 400,
+                              }}
+                            >
+                              {label}
+                            </Link>
+                          </ListItem>
+                        ))}
+                      </List>
+                    </Grid>
+
                     {/* Support Nav List */}
                     <Grid item xs={6} sm={2.4}>
-                      <Typography variant="body1" fontWeight={600}>
+                      <Typography variant="h6" color={'#FBC13C'} >
+
                         Support
                       </Typography>
                       <List sx={{ pt: 2, pb: 0 }}>
@@ -213,8 +196,14 @@ const Footer = () => {
                     </Grid>
                   </Grid>
                 </Box>
+                <Box className="homeFoter">
+                  <Typography variant="subtitle1" className="homeFoterText">2023. All rights reserved</Typography>
+                  <Typography variant="subtitle1">2023. All rights reserved</Typography>
+                </Box>
               </Grid>
             </Grid>
+            <Box>
+            </Box>
           </Box>
         </Container>
       </Box>

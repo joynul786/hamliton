@@ -1,24 +1,41 @@
 import { Box, Grid, Typography, Container } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+
 const MissionVision = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
-    <Box py={4}>
+    <Box>
       <Container maxWidth="xl">
-        <Grid container spacing={10}>
-          <Grid item xs={12} md={4} className="center" order={1}>
-            <Typography variant="h3" sx={{ color: "#000", fontWeight: "600" }}>
-              Our
-              <br />
+        <Grid container>
+          {/* Mission Grid Item */}
+          <Grid item xs={12} md={5} className="center" style={{
+            backgroundColor: '#00877A',
+            padding: matches ? '30px 0' : '30px',
+            order: matches ? 1 : undefined,
+          }}>
+            <Typography variant="h3" sx={{
+              fontWeight: "600",
+              color: '#FFFFFF',
+              fontSize: matches ? '2rem' : undefined,
+              textAlign: matches ? 'center' : undefined,
+            }}>
+
               Mission
             </Typography>
           </Grid>
-          <Grid item xs={12} md={8} order={2}>
-            <Typography sx={{maxWidth:600}}>
-              Our mission at Hamilton Telecom Is to transform the world of
-              mobile telecommunications by delivering Innovative and tailored
+
+          {/* Mission Details Grid Item */}
+          <Grid item xs={12} md={7} style={{
+            backgroundColor: '#00877A',
+            padding: matches ? '14px' : '30px',
+            order: matches ? 2 : undefined,
+          }}>
+            <Typography sx={{ maxWidth: 600, color: '#FFFFFF' }}>
+              Our mission at Hamilton Telecom is to transform the world of
+              mobile telecommunications by delivering innovative and tailored
               solutions that enable businesses to establish their own mobile
               brands. We strive to provide exceptional customer experiences,
               seamless integration, and the latest technological advancements to
@@ -26,20 +43,31 @@ const MissionVision = () => {
               landscape.
             </Typography>
           </Grid>
-          <Grid item xs={12} md={8} order={matches?4:3}>
-            <Typography sx={{maxWidth:600}}>
+
+          {/* Vision Grid Item */}
+          <Grid item xs={12} md={5} className="center" style={{
+            backgroundColor: '#FBC13C',
+            padding: matches ? '30px 0' : '30px',
+            order: matches ? 3 : undefined,
+          }}>
+            <Typography variant="h3" sx={{ color: "#000", fontWeight: "600" }}>
+
+              Vision
+            </Typography>
+          </Grid>
+
+          {/* Vision Details Grid Item */}
+          <Grid item xs={12} md={7} style={{
+            backgroundColor: '#FBC13C',
+            padding: matches ? '14px' : '30px',
+            order: matches ? 4 : undefined,
+          }}>
+            <Typography sx={{ maxWidth: 600 }}>
               Our vision is to become the leading provider of comprehensive and
               customized mobile virtual service solutions, delivering
               unparalleled support, seamless integration, and forward-thinking
-              strategies to help our clients thrive in an ever evolving
+              strategies to help our clients thrive in an ever-evolving
               industry.
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={4} className="center"  order={matches?3:4}>
-            <Typography variant="h3" sx={{ color: "#000", fontWeight: "600" }}>
-              Our
-              <br />
-              Vision
             </Typography>
           </Grid>
         </Grid>

@@ -11,7 +11,7 @@ const ProductSimpleCard = ({ img, description, title, link }) => {
           <div className="simple-card-action-btn">
             <Link to={link}>
               <IconButton>
-                <EastIcon />
+                {/* <EastIcon /> */}
               </IconButton>
             </Link>
           </div>

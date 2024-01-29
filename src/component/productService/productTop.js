@@ -1,20 +1,16 @@
-import {
-  Container,
-  Grid,
-  Typography,
-  Box,
-  TextField,
-  Button,
-} from "@mui/material";
-import People6Pic from "assets/img/static/bg/people6.png";
-import People7Pic from "assets/img/static/bg/people7.png";
+import React from 'react';
+import { Container, Grid, Typography, Box } from "@mui/material";
+import roundImg from '../../assets/img/dynamicImg/roundImg.png';
+import Images from "../../assets/img/images";
+import arrow from "../../assets/img/dynamicImg/arrow.png";
+
 const ProductTop = () => {
   return (
-    <Box py={5}>
+    <Box py={6}>
       <Container maxWidth="xl">
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} className="center">
-            <Box>
+        <Grid container spacing={3} justifyContent="space-evenly" alignItems="center">
+          <Grid item xs={12} md={4}>
+            <Box paddingRight={2}>
               <Typography variant="body2" fontWeight={600}>
                 Product & Services
               </Typography>
@@ -25,32 +21,47 @@ const ProductTop = () => {
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box className="resImg">
-              <img src={People6Pic} alt="people" />
-            </Box>
-          </Grid>
-        </Grid>
-        <Grid container spacing={3} sx={{ p: 4, bgcolor: "#ffb2001a" }}>
-          <Grid item xs={12} md={7}>
-            <Typography>MVNO & MVNE</Typography>
-            <Typography variant="h4" color="secondary" fontWeight="bold" mt={4}>
-              Mobile Virtual Network
-              <br />
-              Operator - MVNO
-            </Typography>
-            <Typography mt={4}>
-              Hamilton provides a highly scalable multi-tenant service delivery
-              platform that gives MVNOs the ability launch and manage their own
-              successful mobile brands. Hamilton's combines next-generation
-              technology with traditional telecom environments to enable you
-              create exciting new opportunities,have full control over customer
-              experience, sales and marketing strategies, service management as
-              well as billing, and more .
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={5}>
-            <Box className="resImg">
-              <img src={People7Pic} alt="people" />
+            <Box position="relative">
+              <img
+                src={Images.Mask}
+                alt="people"
+                width={400}
+                style={{ position: 'relative' }}
+              />
+              <div
+                className='roundImageText'
+                style={{
+                  backgroundImage: `url(${roundImg})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  width: '140px',
+                  height: '140px',
+                  position: 'absolute',
+                  bottom: '-39px',
+                  right: '-43px',
+                  backgroundColor: 'white',
+                  borderRadius: '50%',
+                  zIndex: 1,
+
+                }}
+              ></div>
+              <div
+                className='arrowImg'
+                style={{
+                  backgroundImage: `url(${arrow})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  height: '100px',
+                  width: '100px',
+                  position: 'absolute',
+                  bottom: '-19px',
+                  right: '-23px',
+                  backgroundColor: 'white',
+                  borderRadius: '50%',
+                  zIndex: 2,
+
+                }}
+              ></div>
             </Box>
           </Grid>
         </Grid>

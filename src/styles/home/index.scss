@@ -1,4 +1,5 @@
 @import "../variables", "../common";
+
 .home-services {
   width: 100%;
   // height: 400px;
@@ -140,11 +141,6 @@
   flex-wrap: nowrap;
   min-height: 310px;
   .left-side {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 30px;
     .simple-card-title {
       margin-bottom: 8px;
       color: $secondary;
@@ -155,17 +151,10 @@
       font-size: 14px;
     }
     .simple-card-action-btn {
-      margin-top: 15px;
+      position: absolute;
+      bottom: 0;
+      margin-bottom: 15px;
     }
-  }
-  .right-side {
-    height: auto;
-    width: 50%;
-    overflow: hidden;
-    padding-top: 40px;
-    background-image: url(../../assets/img/static/bg/roundpattern.png);
-    background-position: top right;
-    background-repeat: no-repeat;
   }
 }
 
@@ -268,10 +257,232 @@
   }
   .home-banner-container .home-banner .banner-heading h2 {
     font-size: 3vw;
-    margin-top: 0
+    margin-top: 0;
   }
   .home-banner-container .home-banner .banner-heading h5 {
     font-size: 5vw;
     margin-top: 2px;
+  }
+}
+.homeFoter {
+  display: flex;
+  padding: 20px 0;
+}
+.homeFoterText {
+  padding-right: 200px;
+  padding-bottom: 10px;
+}
+.aboutPage {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+.resImg {
+  padding: 14px;
+  margin-bottom: 16px !important;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.aboutImag {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 0 !important;
+}
+.caption {
+  margin-top: 0 !important;
+  border: 2px solid white;
+  padding: 4px 20px;
+  border-radius: 14px;
+}
+.fromBox {
+  padding: 24px;
+}
+.serViceImg {
+  position: relative;
+  border: 2px solid red;
+  padding-top: "24px";
+  max-width: 400px;
+  padding-bottom: 70px;
+  align-self: flex-end;
+}
+
+.serViceImg img {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.callCenter {
+  padding: 60px;
+}
+
+.callServices {
+  font-weight: 700;
+  padding-left: 660px;
+  padding-top: 70px;
+}
+
+.callCenterText {
+  color: #fff;
+  line-height: 2 !important;
+  padding-top: 30px;
+}
+
+.callPositionImgOne {
+  left: 37px;
+  bottom: -18px !important;
+  position: absolute;
+  width: 220px !important;
+  height: 107px !important;
+}
+.callPositionImgTWo {
+  left: 564px;
+  bottom: 29px !important;
+  position: absolute;
+  width: 268px !important;
+  height: 105px !important;
+}
+
+.BusinessSolution {
+  color: #fff;
+  padding: 120px 0 0 200px;
+  font-weight: 500 !important;
+}
+.FrmaImgConatiner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding-top: 143px;
+  flex-wrap: wrap;
+}
+
+.frameImg {
+  width: 240px !important;
+  height: 240px !important;
+}
+
+.mobileWireLess::after {
+  content: "";
+  width: 335px;
+  height: 6px;
+  background-color: #faaf01;
+  position: absolute;
+  top: 246px;
+  left: 11px;
+}
+.interNateTextConatiner {
+  width: 500px;
+  margin-left: 140px;
+  margin-top: 60px;
+}
+
+.fromCtrl {
+  margin-bottom: 30px !important;
+}
+.Publicsector {
+  display: flex;
+  justify-content: flex-end;
+  padding-left: 380px !important;
+}
+.ServicesIndustry {
+  font-size: 30px !important;
+  padding-bottom: 20px !important;
+}
+
+.transportANdlogistics {
+  padding-top: 40px !important;
+  padding-left: 100px !important;
+}
+.footerForm {
+  margin-top: 0px !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+.locateUs {
+  padding-bottom: 0 !important;
+  border: 2px solid red !important;
+}
+.fromContainer {
+  padding-left: 20 !important;
+  padding-right: 20 !important;
+}
+.vrtical {
+  display: none !important;
+}
+@media screen and (max-width: 700px) {
+  .homeFoter {
+    padding-right: 0px;
+    flex-direction: column;
+  }
+  .vrtical {
+    display: block !important;
+  }
+  .media {
+    padding: 14px;
+  }
+  .roundImg {
+    width: 100% !important;
+  }
+  .fromBox {
+    padding: 10px !important;
+  }
+  .callCenter {
+    padding: 24px;
+  }
+  .callServices {
+    padding: 20px;
+  }
+  .callPositionImgTWo {
+    display: none !important;
+  }
+  .callPositionImgOne {
+    display: none !important;
+  }
+  .FrmaImgConatiner {
+    display: none !important;
+  }
+  .BusinessSolution {
+    padding: 160px 40px !important;
+  }
+  .mobileWireLess::after {
+    display: none;
+  }
+  .WirelessText {
+    display: none;
+  }
+  .Wirelessp4 {
+    display: none;
+  }
+  .interNateTextConatiner {
+    width: 100%;
+    margin: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .fromCtrl {
+    margin-bottom: 150px !important;
+  }
+  .Publicsector {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 20px !important;
+  }
+  .ServicesIndustry {
+    font-size: 23px !important;
+    padding-bottom: 10px !important;
+  }
+  .transportANdlogistics {
+    padding-top: 10px !important;
+    padding-left: 20px !important;
+  }
+  .footerForm {
+    padding-bottom: 40px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .roundImageText {
+    display: none;
+  }
+  .arrowImg {
+    display: none;
   }
 }

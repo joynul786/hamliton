@@ -4,21 +4,28 @@ import {
   Typography,
   Box,
 } from "@mui/material";
-import People10 from "assets/img/static/bg/people10.png";
-
+import communities from '../../assets/img/dynamicImg/communities.png'
 const IndustriesTop = () => {
   return (
-    <Box py={5}>
-      <Container maxWidth="xl" >
-        <Box pb={4} mb={8} className="deliverHeading">
+    <Box mx={{ xs: 2, md: 3 }} mb={{ xs: 0, md: 3 }}>
+      <Container maxWidth="xl">
+        <Box p={4} mb={8} className="deliverHeading">
           <h1>Industries</h1>
           <h4>and communities</h4>
         </Box>
       </Container>
-      <Container maxWidth="xl"  sx={{bgcolor:"#1F3432"}}>
+      <Container maxWidth="xl"
+        style={{
+          backgroundImage: `url(${communities})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          height: '470px',
+          backgroundSize: 'cover',
+        }}
+      >
         <Grid container spacing={3} p={3} color="#fff">
           <Grid item xs={12} md={6}>
-            <Box pl={5}>
+            <Box pl={{ sx: 0, md: 6 }}>
               <Typography variant="overline">Communities</Typography>
               <Typography variant="h4" my={4}>
                 Hamilton for communities{" "}
@@ -26,16 +33,14 @@ const IndustriesTop = () => {
               <Typography variant="body2">
                 Hamilton's Mobile Services Suite different types of communities
                 with large numbers of people not below 50,000 members for
-                example,farming communities and SACCOs ,religious communities
+                example,farming communities and SACCOS religious communities
                 like churches, ethnic communities as well as business
                 communities like the big established corporations.
               </Typography>
             </Box>
           </Grid>
           <Grid item xs={12} md={6}>
-            <Box className="resImg">
-              <img src={People10} />
-            </Box>
+
           </Grid>
         </Grid>
       </Container>

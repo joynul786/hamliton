@@ -1,13 +1,14 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import { Navigation,  } from "swiper";
+import { Navigation, } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import homeBannerPic from "assets/img/static/bg/home_banner.png";
+// import homeBannerPic from "assets/img/static/bg/home_banner.png";
+import Images from "assets/img/images";
 const HomeHeader = () => {
   return (
     <section>
       <Container maxWidth="xl">
-        <Box py={3} color="black.main">
+        <Box color="black.main">
           <div className="home-banner-container">
             <Swiper
               spaceBetween={0}
@@ -20,7 +21,7 @@ const HomeHeader = () => {
               <SwiperSlide>
                 <div className="home-banner">
                   <div className="banner-pic">
-                    <img src={homeBannerPic} alt="home-banner" />
+                    <img src={Images.homeBannerPic} alt="home-banner" />
                   </div>
                   <div className="overlay"></div>
                   <div className="banner-heading">
@@ -44,10 +45,10 @@ const HomeHeader = () => {
                   </div>
                 </div>
               </SwiperSlide>
-              <SwiperSlide>
+              {/* <SwiperSlide>
                 <div className="home-banner">
                   <div className="banner-pic">
-                    <img src={homeBannerPic} alt="home-banner" />
+                    <img src={Images.homeBannerPic} alt="home-banner" />
                   </div>
                   <div className="overlay"></div>
                   <div className="banner-heading">
@@ -70,11 +71,11 @@ const HomeHeader = () => {
                     </div>
                   </div>
                 </div>
-              </SwiperSlide>
-              <SwiperSlide>
+              </SwiperSlide> */}
+              {/* <SwiperSlide>
                 <div className="home-banner">
                   <div className="banner-pic">
-                    <img src={homeBannerPic} alt="home-banner" />
+                    <img src={Images.homeBannerPic} alt="home-banner" />
                   </div>
                   <div className="overlay"></div>
                   <div className="banner-heading">
@@ -97,7 +98,7 @@ const HomeHeader = () => {
                     </div>
                   </div>
                 </div>
-              </SwiperSlide>
+              </SwiperSlide> */}
             </Swiper>
           </div>
         </Box>

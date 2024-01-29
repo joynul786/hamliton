@@ -1,82 +1,62 @@
-import { Typography, Container, Box, Grid, Tabs, Tab } from "@mui/material";
-import { useState } from "react";
+import { Typography, Container, Box, CardMedia } from "@mui/material";
+import business from '../../assets/img/dynamicImg/Busness.png';
+import interNetSerVice from '../../assets/img/dynamicImg/interNetSerVice.png';
+import Images from "../../assets/img/images";
 
 const InternetService = () => {
-  const [value, setValue] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
   return (
-    <Box>
+    <Box >
       <Container maxWidth="xl">
-        <Box className="internet-service-bg" p={6}>
-          <Typography variant="h3" color="#fff" fontWeight={700}>
-            Internet
-            <br />
-            Services
-          </Typography>
-          <Box sx={{ width: "100%" }}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }} color="#fff">
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="basic tabs example"
-                indicatorColor="secondary"
-                textColor="inherit"
-              >
-                <Tab
-                  label="Mobile wireless connections"
-                  {...a11yProps(0)}
-                  color="#fff"
-                />
-                <Tab label="P2P connections" {...a11yProps(1)} />
-                <Tab label="P2MP connections" {...a11yProps(2)} />
-                <Tab label="Fiber connectivity" {...a11yProps(2)} />
-              </Tabs>
-            </Box>
-            <CustomTabPanel value={value} index={0}>
-              Hamilton offers mobile internet connections over 4G/5G LTE devices
-              like modems,mifis,routers and E-SIM enabled lowcost mobile phones.
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={1}>
-              Point to point dedicated microwave internet connections
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={2}>
-              Point to multi point internet connections
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={3}>
-              Backhaul and last mile fiber connections
-            </CustomTabPanel>
+        <Box
+          style={{
+            backgroundImage: `url(${business})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            // height: '550px',
+            position: 'relative'
+          }}
+        >
+          <Box>
+            <Typography variant="h2" className="BusinessSolution">
+              Business Solution
+            </Typography>
+          </Box>
+          <Box className='FrmaImgConatiner'>
+            <CardMedia className="frameImg" component='img' src={Images.Frame1} />
+            <CardMedia className="frameImg" component='img' src={Images.Frame2} />
+            <CardMedia className="frameImg" component='img' src={Images.Frame3} />
+            <CardMedia className="frameImg" component='img' src={Images.Frame4} />
+            {/* <CardMedia className="frameImg" component='img' src={Images.Frame5} /> */}
           </Box>
         </Box>
       </Container>
+      <Container maxWidth="xl">
+        <Box
+          style={{
+            backgroundImage: `url(${interNetSerVice})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            height: '470px',
+            backgroundSize: 'cover',
+            position: 'relative'
+          }}
+        >
+          <Typography variant="h2" color={'#000'} fontWeight={700} p={{ xs: 4, md: 8 }}>Internet SerVices</Typography>
+
+          <Box sx={{ display: 'flex', flexWrap: 'wrap' }} className='mobileWireLess'>
+            <Typography variant="h4" fontWeight={400} color={'#FFB200'} className="WirelessText" > Mobile Wireless connection</Typography>
+            <Typography variant="h4" px={2} color={'black'} className="Wirelessp4"> P2P connections P2MP connections</Typography>
+            <Box className='interNateTextConatiner'>
+              <Typography variant="body1" color={'black'} fontWeight={500} > Hamilton offers mobile internet connections over 4G/5G LTE devices like modems, mifis, routers and E-SIM enabled lowcost mobile phones
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Container>
+
     </Box>
   );
 };
-function CustomTabPanel(props) {
-  const { children, value, index, ...other } = props;
 
-  return (
-    <div
-      role="tabpanel"
-      hidden={value !== index}
-      id={`simple-tabpanel-${index}`}
-      aria-labelledby={`simple-tab-${index}`}
-      {...other}
-    >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography color="#fff">{children}</Typography>
-        </Box>
-      )}
-    </div>
-  );
-}
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
-  };
-}
 export default InternetService;

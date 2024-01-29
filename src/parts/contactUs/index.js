@@ -12,14 +12,14 @@ import SectionHeading from "component/sectionHeading";
 
 const ContactUs = () => {
   return (
-    <div>
-      <Container maxWidth="xl">
-        <Grid container spacing={3} py={4}>
-          <Grid item xs={12} md={6} sx={{display:"flex",alignItems:"center"}}>
+    <Box mb={10}>
+      <Container maxWidth="xl"  >
+        <Grid container spacing={3} py={2} style={{ display: 'flex', justifyContent: 'space-evenly', }}>
+          <Grid item xs={12} md={5} sx={{ display: "flex", alignItems: "center" }}>
             <img src={ContactUsPic} alt="contact us" />
           </Grid>
-          <Grid item xs={12} md={6}>
-            <Box bgcolor="white.main" p={5} className="shadow">
+          <Grid item xs={12} md={5}>
+            <Box bgcolor="white.main" className='fromBox' >
               <Box>
                 <SectionHeading title="Contact Us" />
                 <Typography variant="body2" mt={2}>
@@ -53,14 +53,14 @@ const ContactUs = () => {
                 </FormGroup>
 
                 <Box pt={3}>
-                  <StandardButton type="submit" buttonText="Submit" fullWidth/>
+                  <StandardButton type="submit" buttonText="Submit" fullWidth />
                 </Box>
               </Box>
             </Box>
           </Grid>
         </Grid>
       </Container>
-    </div>
+    </Box>
   );
 };
 

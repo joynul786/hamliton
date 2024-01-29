@@ -19,7 +19,7 @@ const ChooseCard = ({ theme, bgPic, title, desc, link }) => {
           </div>
         </div>
         <div className="choose-card-content">
-          <h3>{title}</h3>
+          <h3 style={{ color: '#FBC13C' }}>{title}</h3>
           <p>{desc}</p>
         </div>
       </div>

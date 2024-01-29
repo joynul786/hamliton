@@ -1,4 +1,4 @@
-import { Box,  Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { Link } from "react-router-dom";
@@ -13,7 +13,7 @@ const HomeChooseUs = () => {
     <section>
       <Container maxWidth="xl">
         <Box py={4}>
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -28,9 +28,9 @@ const HomeChooseUs = () => {
               &nbsp; &nbsp;
               <ArrowOutwardIcon fontSize="18px" />
             </Box>
-          </Box>
-          <Grid container spacing={3} py={3}>
-            {matches && <Grid item xs={12} md={2.5}></Grid>}
+          </Box> */}
+          <Grid container style={{ display: 'flex', justifyContent: 'space-evenly', backgroundColor: '#00877A' }} py={3}>
+            {/* {matches && <Grid item xs={12} md={2.5}></Grid>} */}
             <Grid item xs={12} sm={4} md={2.5}>
               <ChooseCard
                 theme="primary"
@@ -65,7 +65,7 @@ const HomeChooseUs = () => {
                 desc="We have a supreme team who works rigorously to grow businesses beyond client’s expectations."
               />
             </Grid>
-            {matches && <Grid item xs={12} md={2.5}></Grid>}
+            {/* {matches && <Grid item xs={12} md={2.5}></Grid>} */}
           </Grid>
         </Box>
       </Container>

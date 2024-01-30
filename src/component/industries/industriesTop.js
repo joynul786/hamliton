@@ -1,10 +1,5 @@
-import {
-  Container,
-  Grid,
-  Typography,
-  Box,
-} from "@mui/material";
-import communities from '../../assets/img/dynamicImg/communities.png'
+import { Container, Grid, Typography, Box } from "@mui/material";
+import communities from "../../assets/img/dynamicImg/communities.png";
 const IndustriesTop = () => {
   return (
     <Box mx={{ xs: 2, md: 3 }} mb={{ xs: 0, md: 3 }}>
@@ -14,13 +9,14 @@ const IndustriesTop = () => {
           <h4>and communities</h4>
         </Box>
       </Container>
-      <Container maxWidth="xl"
+      <Container
+        maxWidth="xl"
         style={{
           backgroundImage: `url(${communities})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          height: '470px',
-          backgroundSize: 'cover',
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+          minHeight: "470px",
+          backgroundSize: "cover",
         }}
       >
         <Grid container spacing={3} p={3} color="#fff">
@@ -39,9 +35,7 @@ const IndustriesTop = () => {
               </Typography>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6}>
-
-          </Grid>
+          <Grid item xs={12} md={6}></Grid>
         </Grid>
       </Container>
     </Box>

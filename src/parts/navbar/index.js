@@ -114,6 +114,14 @@ const Navbar = () => {
                 },
               }}
             >
+              <IconButton
+                size="large"
+                onClick={handleDrawerToggle}
+                color="secondary"
+                sx={{ position: "absolute", right: 10, top: 10 }}
+              >
+                <Close />
+              </IconButton>
               {navbarList.map(({ label, path }, i) => (
                 <MenuItem key={i} className="nav-item">
                   <NavLink

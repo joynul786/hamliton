@@ -14,7 +14,7 @@ const DeliveredExperience = () => {
       <main>
         <Box py={5}>
           <Container maxWidth="xl">
-            <Box textAlign="center" sx={{ backgroundColor: '#FFB200', padding: 10 }}>
+            <Box textAlign="center" py={10} sx={{ backgroundColor: "#FFB200" }}>
               <Typography variant="overline">VALUE WE BUILT</Typography>
               <Typography variant="h4" color="">
                 Our Delivered Experiences
@@ -24,13 +24,18 @@ const DeliveredExperience = () => {
               <Box my={6}>
                 <Grid container spacing={7}>
                   <Grid item xs={12} md={6}>
-                    <Typography variant="h5" paddingBottom={1} color={'#FFB200'}>
+                    <Typography
+                      variant="h5"
+                      paddingBottom={1}
+                      color={"#FFB200"}
+                    >
                       01
                     </Typography>
                     <Typography variant="body1">
-                      We take pride in the fact that we are able to work with some
-                      of the fastest-growing banks in the country while providing
-                      them with robust hybrid call center outbound solutions.
+                      We take pride in the fact that we are able to work with
+                      some of the fastest-growing banks in the country while
+                      providing them with robust hybrid call center outbound
+                      solutions.
                     </Typography>
                   </Grid>
                   {matches && <Grid item xs={12} md={6}></Grid>}
@@ -38,7 +43,11 @@ const DeliveredExperience = () => {
                     <div className="vr-1"></div>
                   </Grid>
                   <Grid item xs={12} md={6}>
-                    <Typography variant="h5" paddingBottom={1} color={'#00877A'}>
+                    <Typography
+                      variant="h5"
+                      paddingBottom={1}
+                      color={"#00877A"}
+                    >
                       02
                     </Typography>
                     <Typography variant="body1">
@@ -54,7 +63,11 @@ const DeliveredExperience = () => {
                   </Grid>
 
                   <Grid item xs={12} md={6}>
-                    <Typography variant="h5" paddingBottom={1} color={'#FFB200'}>
+                    <Typography
+                      variant="h5"
+                      paddingBottom={1}
+                      color={"#FFB200"}
+                    >
                       03
                     </Typography>
                     <Typography variant="body1">
@@ -69,7 +82,11 @@ const DeliveredExperience = () => {
                   </Grid>
                   {matches && <Grid item xs={12} md={6}></Grid>}
                   <Grid item xs={12} md={6}>
-                    <Typography variant="h5" paddingBottom={1} color={'#00877A'}>
+                    <Typography
+                      variant="h5"
+                      paddingBottom={1}
+                      color={"#00877A"}
+                    >
                       04
                     </Typography>
                     <Typography variant="body1">

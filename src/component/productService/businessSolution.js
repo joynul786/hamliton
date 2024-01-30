@@ -1,41 +1,119 @@
-import React from 'react';
-import { Typography, Container, Box, Grid, CardMedia } from "@mui/material";
+import { Box, Container, Typography, useTheme } from "@mui/material";
+import BgOverlayCard from "component/cards/bgOverlayCard";
 import { Swiper, SwiperSlide } from "swiper/react";
-import RectCard from "component/cards/rectCard";
-import callCenter from '../../assets/img/dynamicImg/callcenter.png';
-import Images from 'assets/img/images';
+import business from "../../assets/img/dynamicImg/Busness.png";
 
 const BusinessSolution = () => {
+  const { palette } = useTheme();
   return (
-    <Box style={{ position: 'relative' }}>
-      <Container maxWidth='xl'
+    <Box style={{ position: "relative" }}>
+      <Box
+        style={{
+          backgroundImage: `url(${business})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+          // height: '550px',
+          position: "relative",
+        }}
       >
-        <Grid container style={{
-          backgroundImage: `url(${callCenter})`,
-          backgroundRepeat: `no-repeat, repeat`,
-          height: '550px',
-          objectFit: 'contain',
-          backgroundColor: '#00877A',
-          // backgroundSize: { xs: "100%", sm: "60%" },
-        }}>
-
-
-          <Box className="callServices">
-            <Typography variant="h3" color={'#faaf01'}>
-              Call Centre Services
+        <Container maxWidth="xl">
+          {/* <Container maxWidth="lg"> */}
+          <Box pt={15}>
+            <Typography variant="h2" className="BusinessSolution">
+              Business Solution
             </Typography>
-            <Typography variant="body2" className='callCenterText'>
-              Hamilton Call Centre offers a state-of-the art facility where our clinents can reach and interact
-              with their customers on an omnichannel system. We offer outbound and inbound outsourced and
-              call centre solutions enabling channels like voice, SMS, and web-chat. Our technology will provide
-              you a secure and efficient system that will help maximize you efficiency and meet your goals.
-            </Typography>
-
-            <CardMedia className='callPositionImgOne' component={'img'} src={Images.positionOne} />
-            <CardMedia className='callPositionImgTWo' component={'img'} src={Images.positiontwo} />
           </Box>
-        </Grid>
-      </Container>
+          <Box pt={15}>
+            <Swiper
+              spaceBetween={20}
+              breakpoints={{
+                992: {
+                  slidesPerView: 4,
+                },
+                768: {
+                  slidesPerView: 2,
+                },
+                480: {
+                  slidesPerView: 1,
+                },
+              }}
+              className="home-product-swiper"
+            >
+              <SwiperSlide>
+                <BgOverlayCard
+                  title="Email and Cloud <br /> solution"
+                  overlayColor={palette.secondary[800]}
+                  minHeight={60}
+                  style={{ padding: "120px 20px 20px" }}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <BgOverlayCard
+                  title="Web and Domain <br /> hosting "
+                  overlayColor={palette.primary[800]}
+                  minHeight={60}
+                  style={{ padding: "120px 20px 20px" }}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <BgOverlayCard
+                  title="Managed services – Surveillance, <br /> tracking etc"
+                  overlayColor={palette.secondary[800]}
+                  minHeight={60}
+                  style={{ padding: "120px 20px 20px" }}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <BgOverlayCard
+                  title="Email and Cloud <br /> solution"
+                  overlayColor={palette.secondary[800]}
+                  minHeight={60}
+                  style={{ padding: "120px 20px 20px" }}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <BgOverlayCard
+                  title="Web and Domain <br /> hosting "
+                  overlayColor={palette.primary[800]}
+                  minHeight={60}
+                  style={{ padding: "120px 20px 20px" }}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <BgOverlayCard
+                  title="Managed services – Surveillance, <br /> tracking etc"
+                  overlayColor={palette.secondary[800]}
+                  minHeight={60}
+                  style={{ padding: "120px 20px 20px" }}
+                />
+              </SwiperSlide>
+            </Swiper>
+            {/* <CardMedia
+                className="frameImg"
+                component="img"
+                src={Images.Frame1}
+              />
+              <CardMedia
+                className="frameImg"
+                component="img"
+                src={Images.Frame2}
+              />
+              <CardMedia
+                className="frameImg"
+                component="img"
+                src={Images.Frame3}
+              />
+              <CardMedia
+                className="frameImg"
+                component="img"
+                src={Images.Frame4}
+              /> */}
+            {/* <CardMedia className="frameImg" component='img' src={Images.Frame5} /> */}
+          </Box>
+          {/* </Container> */}
+        </Container>
+      </Box>
     </Box>
   );
 };
